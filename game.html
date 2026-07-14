@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PogGames - Play</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+<div class="logo">
+🎮 PogGames
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Popular</a>
+<a href="#">Categories</a>
+</nav>
+
+</header>
+
+
+<section class="game-page">
+
+<h1 id="title">Game Loading...</h1>
+
+
+<div class="game-box">
+
+<iframe
+id="player"
+src=""
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<button id="fullscreen">
+Fullscreen
+</button>
+
+
+<div class="info">
+
+<h2>About</h2>
+
+<p id="description">
+Choose a game from the PogGames homepage.
+</p>
+
+
+<h3>Controls</h3>
+
+<p>
+Usually W,A,S,D or the arrow keys
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<script>
+
+const games = {
+
+    moto: {
+        name: "Moto X3M",
+        link: "https://www.miniplay.com/embed/moto-x3m",
+        description: "Race through crazy tracks, avoid traps, and finish as fast as possible!"
+    },
+
+    run3: {
+        name: "Run 3",
+        link: "https://ubg98.github.io/Run3/",
+        description: "Run through space tunnels and try not to fall!"
+    },
+
+    drift: {
+        name: "Drift Hunters",
+        link: "https://drifthuntersonline.gitlab.io/file/",
+        description: "Customize cars and master your drifting skills!"
+    },
+
+    subway: {
+        name: "Subway Surfers",
+        link: "https://files.gamezhero.com/game/905/1d1/9051d1173be765fb/data/index.html",
+        description: "Dodge obstacles and collect coins!"
+    },
+
+    minecraft: {
+    name: "Minecraft Classic",
+    link: "https://classic.minecraft.net/",
+    description: "Build and explore in a classic Minecraft world!"
+    
+   },
+
+    geometry: {
+    name: "Geometry Dash",
+    link: "https://geometrydash-pc.com/play/gdlite/",
+    description: "Jump, dodge obstacles, and test your timing in this fast-paced platform game!"
+   
+   },
+
+    mrracer: {
+    name: "Mr Racer",
+    link: "https://mr-racer.com/mrracergamefile/mr-racer-car-racing/",
+    description: "Race through traffic, overtake cars, and become the fastest racer!"
+
+   },
+   
+    stickmanhook: {
+    name: "Stickman Hook",
+    link: "https://stickman-unblocked.github.io/game/",
+    description: "Swing through levels, avoid obstacles, and reach the finish!"
+
+  },
+  
+    penaltyshooters2: {
+    name: "Penalty Shooters 2",
+    link: "https://html5.gamedistribution.com/571b9df027e449f78e3869ba19658754/?gd_sdk_referrer_url=https://penaltyshooters2.com",
+    description: "Take penalties, save shots, and become the football champion!"
+
+  },
+ 
+    happywheels: {
+    name: "Happy Wheels",
+    link: "https://happy-wheels-online.github.io/file/",
+    description: "Navigate dangerous obstacle courses with unique characters and vehicles!"
+  
+  },
+
+    mortalkombat: {
+    name: "Mortal Kombat",
+    link: "https://megadrive-emulator.com/game/?game=mortal_kombat_rev_00_jue_i.gen",
+    description: "Battle opponents with powerful moves and become the ultimate fighter!"
+  
+  },
+   impossiblequiz: {
+   name: "The Impossible Quiz",
+   link: "https://theimpossiblequiz-online.github.io/file",
+   description: "The Impossible Quiz is a quirky, trick-filled puzzle game that challenges players with misleading questions, unexpected answers, and absurd humor."
+},
+
+};
+
+
+
+const url = new URLSearchParams(window.location.search);
+
+const chosenGame = url.get("game");
+
+
+
+if (games[chosenGame]) {
+
+    document.getElementById("title").textContent = games[chosenGame].name;
+
+    document.getElementById("player").src = games[chosenGame].link;
+
+    document.getElementById("description").textContent = games[chosenGame].description;
+
+} else {
+
+    document.getElementById("title").textContent = "Currently unavailable";
+
+}
+
+
+
+document.getElementById("fullscreen").onclick = function() {
+
+    document.getElementById("player").requestFullscreen();
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
